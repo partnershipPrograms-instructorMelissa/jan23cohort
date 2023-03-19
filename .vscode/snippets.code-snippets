@@ -43,7 +43,7 @@
 		"scope": "java",
 		"prefix": "sys",
 		"body": [
-			"System.out.println('$1');",
+			"System.out.println($1);",
 			"$2"
 		],
 		"description": "Log output to console"
