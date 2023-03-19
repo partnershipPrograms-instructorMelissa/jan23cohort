@@ -1,15 +1,15 @@
  <link rel="stylesheet" href="~/js/site.js">
 @{
     ViewData["Title"] = "Home Page";
-    
+
 }
 
 <div class="text-center">
     <h1 class="display-4">Your Random Passcdoe is:</h1>
     <h2>Random Passcode #<span class="counter-display">@Context.Session.GetInt32("Passwords")</span></h2>
-    <input type="text" id="password" value="16Lkpmk#DrpF#c">
+    <span onmouseover="genPassword()">Booked By</span><p type="text" id="password">25</p>
     <section>
-        <button class="counter-plus" onclick="genPassword()">Generate</button>
+        <button class="counter-plus">Generate</button>
     </section>
 </div>
 <script type="text/javascript">
