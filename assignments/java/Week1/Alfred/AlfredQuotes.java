@@ -26,11 +26,11 @@ public class AlfredQuotes {
 
         if (name != -1) {
             return "Right away, sir. She certainly isn't sophisticated enough for that.";
-        } else if (name2 != -1) {
-            return "At your service. As you wish, naturally.";
-        } else {
-            return "Right. And with that I shall retire.";
         }
+        if (name2 != -1) {
+            return "At your service. As you wish, naturally.";
+        }
+        return "Right. And with that I shall retire.";
     }
 
     // NINJA BONUS
