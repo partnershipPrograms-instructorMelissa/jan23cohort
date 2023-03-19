@@ -1,4 +1,4 @@
-package assignments.java.Fundamentals;
+package assignments.java.Week1.Fundamentals;
 
 public class NameAge {
     public static void main(String[] args) {

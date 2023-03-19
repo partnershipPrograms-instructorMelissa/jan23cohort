@@ -1,4 +1,4 @@
-package assignments.java;
+package assignments.java.Week1.CafeJavaAssignment;
 
 public class CafeJava {
     public static void main(String[] args) {
