@@ -15,7 +15,12 @@ public class Main {
 
         // System.out.println(testApp.getRandomLetter());
 
-        System.out.println(testApp.generatePassword());
+        // System.out.println(testApp.generatePassword());
+
+        String[] loopThrough = testApp.getNewPasswordSet(8);
+        for (int i = 0; i < loopThrough.length; i++) {
+            System.out.println(loopThrough[i]);
+        }
 
     }
 

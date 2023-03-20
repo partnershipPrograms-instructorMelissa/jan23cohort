@@ -39,4 +39,13 @@ public class Puzzling {
         }
         return newPassword;
     }
+
+    public String[] getNewPasswordSet(int num) {
+        String[] passwordSet = new String[num];
+
+        for (int i = 0; i < num; i++) {
+            passwordSet[i] = generatePassword();
+        }
+        return passwordSet;
+    }
 }
