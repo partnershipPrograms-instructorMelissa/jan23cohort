@@ -15,4 +15,16 @@ public class Puzzling {
         return newList;
     }
 
+    public String getRandomLetter() {
+        String[] alphaLetters = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
+                "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+        String oneLetter = "' '";
+        Random randLetter = new Random();
+
+        for (int i = 0; i <= 1; i++) {
+            i = randLetter.nextInt(0, 26);
+            oneLetter = alphaLetters[i];
+        }
+        return oneLetter;
+    }
 }
