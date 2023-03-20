@@ -13,7 +13,9 @@ public class Main {
         // System.out.println(loopThrough[i]);
         // }
 
-        System.out.println(testApp.getRandomLetter());
+        // System.out.println(testApp.getRandomLetter());
+
+        System.out.println(testApp.generatePassword());
 
     }
 

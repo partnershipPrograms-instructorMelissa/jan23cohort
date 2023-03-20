@@ -27,4 +27,16 @@ public class Puzzling {
         }
         return oneLetter;
     }
+
+    public String generatePassword() {
+
+        int count = 1;
+        String newPassword = " ";
+
+        while (count <= 8) {
+            newPassword += getRandomLetter();
+            count++;
+        }
+        return newPassword;
+    }
 }
