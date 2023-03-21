@@ -13,7 +13,7 @@ public class Main {
         System.out.println(account1.withdrawFunds(200, "checking"));
         System.out.println(account1.getTotalAmountOfMoney("checking"));
 
-        BankAccount.amountofMoney();
+        BankAccount.printTotalAmount();
 
     }
 

@@ -4,7 +4,6 @@ public class BankAccount {
 
     private double checkingBalance;
     private double savingsBalance;
-    private double dollarAmount;
     private static int numberOfAccount = 0;
     private static double totalAmountOfMoney = 0;
 
@@ -12,8 +11,8 @@ public class BankAccount {
         numberOfAccount++;
     }
 
-    public static void amountofMoney() {
-        System.out.println("Total amount in all account is: " + totalAmountOfMoney);
+    public static void printTotalAmount() {
+        System.out.println("You have $" + totalAmountOfMoney + " in your account");
     }
 
     public static void createdAccounts() {
@@ -30,9 +29,11 @@ public class BankAccount {
 
     public double getTotalAmountOfMoney(String accountType) {
         if (accountType.equals("checking")) {
-            return this.checkingBalance;
+            totalAmountOfMoney = this.checkingBalance;
+            return totalAmountOfMoney;
         } else if (accountType.equals("saving")) {
-            return this.savingsBalance;
+            totalAmountOfMoney = this.savingsBalance;
+            return totalAmountOfMoney;
         } else {
             return -1;
         }
