@@ -21,7 +21,6 @@ public class Main {
         for (int i = 0; i < loopThrough.length; i++) {
             System.out.println(loopThrough[i]);
         }
-
     }
 
     // public static void fizzBuzz() {
