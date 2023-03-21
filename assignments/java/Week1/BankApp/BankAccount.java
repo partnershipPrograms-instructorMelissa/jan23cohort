@@ -2,15 +2,19 @@ package assignments.java.Week1.BankApp;
 
 public class BankAccount {
 
-    public double checkingBalance;
-    public double savingsBalance;
-    public double deposit;
-    public static int numberOfAccount = 0;
-    public static double totalAmountOfMoney = 0;
+    private double checkingBalance;
+    private double savingsBalance;
+    private double dollarAmount;
+    private static int numberOfAccount = 0;
+    private static double totalAmountOfMoney = 0;
 
     public BankAccount() {
         numberOfAccount++;
-        totalAmountOfMoney += deposit;
+        totalAmountOfMoney = checkingBalance + savingsBalance;
+    }
+
+    public static void amountofMoney() {
+        System.out.println("Total amount in all account is: " + totalAmountOfMoney);
     }
 
     public static void createdAccounts() {
@@ -48,13 +52,13 @@ public class BankAccount {
         }
     }
 
-    public double withdrawFunds(double substractAmount, String accountType) {
-        if (accountType.equals("checking") && this.checkingBalance > substractAmount) {
-            this.checkingBalance -= substractAmount;
+    public double withdrawFunds(double dollarAmount, String accountType) {
+        if (accountType.equals("checking") && this.checkingBalance > dollarAmount) {
+            this.checkingBalance -= dollarAmount;
             return checkingBalance;
-        } else if (accountType.equals("saving") && this.savingsBalance > substractAmount) {
-            this.savingsBalance -= substractAmount;
-            return substractAmount;
+        } else if (accountType.equals("saving") && this.savingsBalance > dollarAmount) {
+            this.savingsBalance -= dollarAmount;
+            return dollarAmount;
         } else {
             return -1;
         }
