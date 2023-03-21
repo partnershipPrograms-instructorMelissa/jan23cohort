@@ -10,7 +10,6 @@ public class BankAccount {
 
     public BankAccount() {
         numberOfAccount++;
-        totalAmountOfMoney = checkingBalance + savingsBalance;
     }
 
     public static void amountofMoney() {
