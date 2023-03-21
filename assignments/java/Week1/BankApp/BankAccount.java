@@ -41,4 +41,16 @@ public class BankAccount {
             return -1;
         }
     }
+
+    public double withdrawFunds(double substractAmount, String accountType) {
+        if (accountType.equals("checking") && this.checkingBalance > substractAmount) {
+            this.checkingBalance -= substractAmount;
+            return checkingBalance;
+        } else if (accountType.equals("saving") && this.savingsBalance > substractAmount) {
+            this.savingsBalance -= substractAmount;
+            return substractAmount;
+        } else {
+            return -1;
+        }
+    }
 }

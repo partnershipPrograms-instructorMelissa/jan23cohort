@@ -7,8 +7,9 @@ public class Main {
         BankAccount account1 = new BankAccount();
         System.out.println(account1.depositFunds(150, "checking"));
         System.out.println(account1.depositFunds(250, "checking"));
-        System.out.println(account1.depositFunds(250, "saving"));
-        System.out.println(account1.depositFunds(250, "saving"));
+        // System.out.println(account1.depositFunds(250, "saving"));
+        // System.out.println(account1.depositFunds(250, "saving"));
+        System.out.println(account1.withdrawFunds(200, "checking"));
 
     }
 
