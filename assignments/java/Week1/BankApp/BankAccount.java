@@ -25,8 +25,14 @@ public class BankAccount {
         return savingsBalance;
     }
 
-    public static void setTotalAmountOfMoney(double inputAmount) {
-        totalAmountOfMoney += inputAmount;
+    public double getTotalAmountOfMoney(String accountType) {
+        if (accountType.equals("checking")) {
+            return this.checkingBalance;
+        } else if (accountType.equals("saving")) {
+            return this.savingsBalance;
+        } else {
+            return -1;
+        }
     }
 
     public double depositFunds(double dollarAmount, String accountType) {

@@ -10,6 +10,7 @@ public class Main {
         // System.out.println(account1.depositFunds(250, "saving"));
         // System.out.println(account1.depositFunds(250, "saving"));
         System.out.println(account1.withdrawFunds(200, "checking"));
+        System.out.println(account1.getTotalAmountOfMoney("checking"));
 
     }
 
