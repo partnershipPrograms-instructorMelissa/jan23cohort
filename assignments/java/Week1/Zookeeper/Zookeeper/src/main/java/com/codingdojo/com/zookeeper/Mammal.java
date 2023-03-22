@@ -22,6 +22,10 @@ public class Mammal {
 	}
 	
 	public String displayEnergy() {
-		return "Your current energy level is" + " " + energyLevel;
+		return this.name + " " + "your current energy level is" + " " + energyLevel;
+	}
+	
+	public Mammal(String name) {
+		this.name = name;
 	}
 }
