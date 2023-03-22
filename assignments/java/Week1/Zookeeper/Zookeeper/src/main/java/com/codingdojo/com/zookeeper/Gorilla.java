@@ -3,7 +3,6 @@ package com.codingdojo.com.zookeeper;
 public class Gorilla extends Mammal{
 	
 	private Mammal mammal;
-	private int energyLevel;
 	private String gorillaName;
 	
 	public Gorilla(String name, int energyLevel, String gorillaName) {
@@ -50,5 +49,12 @@ public class Gorilla extends Mammal{
 		return "The gorilla is satisfied with the bananas and her energy has increased by 10. "
 				+ "New energy level is " + " " + this.energyLevel;
 	}
+	
+	public String climb() {
+		this.energyLevel -= 10;
+		return "The gorilla has climbed a tree and decreased it's energy by 10. Her current energy level is " 
+				+ " " + this.energyLevel;
+	}
+	
 	
 }
