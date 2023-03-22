@@ -19,8 +19,16 @@ public class BankAccount {
         System.out.println("Total number of accounts: " + numberOfAccount);
     }
 
+    public void setCheckingBalance(double checkingBalance) {
+        this.checkingBalance = checkingBalance;
+    }
+
     public double getCheckingBalance() {
         return checkingBalance;
+    }
+
+    public void setSavingBalance(double savingsBalance) {
+        this.savingsBalance = savingsBalance;
     }
 
     public double getSavingBalance() {

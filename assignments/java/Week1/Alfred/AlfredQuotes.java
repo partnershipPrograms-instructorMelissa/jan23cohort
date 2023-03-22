@@ -1,5 +1,3 @@
-package assignments.java.Week1.Alfred;
-
 import java.util.Date;
 
 public class AlfredQuotes {
