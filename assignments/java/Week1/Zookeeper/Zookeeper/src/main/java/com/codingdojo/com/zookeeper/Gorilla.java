@@ -3,7 +3,31 @@ package com.codingdojo.com.zookeeper;
 public class Gorilla extends Mammal{
 	
 	private Mammal mammal;
+	private int energyLevel;
+	private String gorillaName;
 	
+	public Gorilla(String name, int energyLevel, String gorillaName) {
+		super(name);
+		this.energyLevel = energyLevel;
+		this.gorillaName = gorillaName;
+	}
+
+	public String getGorillaName() {
+		return gorillaName;
+	}
+
+	public void setGorillaName(String gorillaName) {
+		this.gorillaName = gorillaName;
+	}
+
+	public int getEnergyLevel() {
+		return energyLevel;
+	}
+
+	public void setEnergyLevel(int energyLevel) {
+		this.energyLevel = energyLevel;
+	}
+
 	public String getMammal() {
 		return this.mammal.getName();
 	}
@@ -19,6 +43,12 @@ public class Gorilla extends Mammal{
 	public String throwSomething(Mammal mammal) {
 		mammal.energyLevel -= 5;
 		return "The Gorilla has thrown a chair and decreased your health to" + " " + mammal.energyLevel;
+	}
+	
+	public String eatBananas() {
+		this.energyLevel += 10;
+		return "The gorilla is satisfied with the bananas and her energy has increased by 10. "
+				+ "New energy level is " + " " + this.energyLevel;
 	}
 	
 }
