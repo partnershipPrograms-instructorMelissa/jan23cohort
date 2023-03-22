@@ -7,6 +7,11 @@ public class BankAccount {
     private static int numberOfAccount = 0;
     private static double totalAmountOfMoney = 0;
 
+    public BankAccount(double checkingBalance, double savingsBalance) {
+        this.checkingBalance = checkingBalance;
+        this.savingsBalance = savingsBalance;
+    }
+
     public BankAccount() {
         numberOfAccount++;
     }
