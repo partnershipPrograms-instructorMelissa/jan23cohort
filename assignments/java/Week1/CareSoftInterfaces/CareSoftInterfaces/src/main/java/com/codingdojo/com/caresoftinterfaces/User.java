@@ -11,7 +11,6 @@ public class User {
 	
 	public User(Integer id) {
 		this.id = id;
-		this.pin = pin;
 	}
 	
 	public void setId(Integer id) {
@@ -25,6 +24,13 @@ public class User {
 	public void setPin(int pin) {
 		this.pin = pin;
 	}
+
+	public User(Integer id, int pin) {
+		super();
+		this.id = id;
+		this.pin = pin;
+	}
+
     
     // TO DO: Getters and setters
 	// Implement a constructor that takes an ID
