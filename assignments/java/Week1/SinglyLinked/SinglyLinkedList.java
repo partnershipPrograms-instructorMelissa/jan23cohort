@@ -37,13 +37,6 @@ public class SinglyLinkedList {
         }
     }
 
-    public void find(int value) {
-        Node findNode = new Node(value);
-        if (head == null) {
-            return;
-        }
-    }
-
     public void printValues() {
         Node current = head;
         while (current != null) {
