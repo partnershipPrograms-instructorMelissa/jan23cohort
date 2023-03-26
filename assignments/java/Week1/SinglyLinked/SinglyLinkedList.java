@@ -3,9 +3,12 @@
 public class SinglyLinkedList {
     public Node head;
     public Node runner;
+    public Node tail;
+    public int size;
 
     public SinglyLinkedList() {
         this.head = null;
+        this.size = 0;
     }
 
     // SLL methods go here. As a starter, we will show you how to add a node to the
@@ -23,6 +26,29 @@ public class SinglyLinkedList {
         }
     }
 
+    // tail is provided and we're adding a node to the end of the list
+    public void addFront(int value) {
+        Node newNode = new Node(value);
+        newNode.next = head;
+        head = newNode;
+
+        if (tail == null) {
+            tail = head;
+        }
+        size++;
+    }
+
+    public void addBack(int value) {
+        Node newNode = new Node(value);
+        tail.next = newNode;
+        tail = newNode;
+
+        if (head == null) {
+            head = tail;
+        }
+        size++;
+    }
+
     public void remove() {
         if (head == null) {
             return;
@@ -38,10 +64,12 @@ public class SinglyLinkedList {
     }
 
     public void printValues() {
-        Node current = head;
+        Node current = head; // temp variable not reassigning head
         while (current != null) {
-            System.out.println(current.value);
+            System.out.print(current.value + " -> ");
             current = current.next;
         }
+        System.out.println("End of list");
+
     }
 }
