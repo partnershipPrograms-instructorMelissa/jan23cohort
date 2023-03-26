@@ -2,20 +2,20 @@
 
 public class ListTester {
     public static void main(String[] args) {
-        SinglyLinkedList sll = new SinglyLinkedList();
-        sll.add(3);
-        sll.add(4);
-        sll.add(10);
-        sll.add(5);
-        sll.add(15);
-        sll.add(2);
-        sll.addFront(38);
-        sll.addFront(30);
-        sll.addBack(39);
-        sll.addBack(19);
-        // sll.remove();
-        // sll.remove();
-        // sll.find(4);
-        sll.printValues();
+        SinglyLinkedList singlell = new SinglyLinkedList();
+        singlell.add(3);
+        singlell.add(4);
+        singlell.add(10);
+        singlell.add(5);
+        singlell.add(15);
+        singlell.add(2);
+        singlell.addFront(38);
+        singlell.addFront(30);
+        singlell.addBack(39);
+        singlell.addBack(19);
+        // singlell.remove();
+        // singlell.remove();
+        // singlell.find(4);
+        singlell.printValues();
     }
 }

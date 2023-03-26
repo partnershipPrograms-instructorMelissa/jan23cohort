@@ -39,13 +39,13 @@ public class SinglyLinkedList {
     }
 
     public void addBack(int value) {
+        if (tail == null) {
+            addFront(value);
+            return;
+        }
         Node newNode = new Node(value);
         tail.next = newNode;
         tail = newNode;
-
-        if (head == null) {
-            head = tail;
-        }
         size++;
     }
 
