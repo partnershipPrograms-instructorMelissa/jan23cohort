@@ -14,9 +14,13 @@ public class ListTester {
         singlell.addBack(39);
         singlell.addBack(19);
         // singlell.remove();
-        // singlell.remove();
-        // singlell.find(4);
         singlell.insertIndex(16, 2);
         singlell.printValues();
+        System.out.println(singlell.deleteFirst());
+        singlell.printValues();
+        singlell.remove();
+        singlell.printValues();
+        System.out.println(singlell.find(15));
+
     }
 }

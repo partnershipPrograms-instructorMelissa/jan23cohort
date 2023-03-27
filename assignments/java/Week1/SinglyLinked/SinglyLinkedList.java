@@ -68,18 +68,43 @@ public class SinglyLinkedList {
         size++;
     }
 
+    public int deleteFirst() {
+        int val = head.value;
+        head = head.next;
+        if (head == null) {
+            tail = head;
+        }
+        size--;
+        return val;
+    }
+
     public void remove() {
         if (head == null) {
             return;
         } else {
-            Node prev = null;
+            // Node prev = null;
             Node current = head;
             while (current.next.next != null) {
-                prev = current;
+                // prev = current;
                 current = current.next;
             }
             current.next = null;
         }
+    }
+
+    public boolean find(int value) {
+        if (head == null) {
+            return false;
+        }
+
+        Node current = head;
+        while (current.next != null) {
+            if (current.value == value) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
     }
 
     public void printValues() {
