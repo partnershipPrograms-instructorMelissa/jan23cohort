@@ -49,6 +49,25 @@ public class SinglyLinkedList {
         size++;
     }
 
+    public void insertIndex(int value, int index) {
+        if (index == 0) {
+            addFront(value);
+            return;
+        }
+        if (index == size) {
+            addBack(value);
+            return;
+        }
+
+        Node current = head;
+        for (int i = 1; i < index; i++) {
+            current = current.next;
+        }
+        Node newNode = new Node(value, current.next);
+        current.next = newNode;
+        size++;
+    }
+
     public void remove() {
         if (head == null) {
             return;
