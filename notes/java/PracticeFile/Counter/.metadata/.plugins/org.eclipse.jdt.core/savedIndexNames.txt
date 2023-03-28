@@ -1,5 +1,4 @@
 INDEX VERSION 1.131+/Users/markebtaligon/Desktop/CodingDojo/jan23cohort/notes/java/PracticeFile/Counter/.metadata/.plugins/org.eclipse.jdt.core
-3241745330.index
 690974619.index
 3506326637.index
 3074497974.index
