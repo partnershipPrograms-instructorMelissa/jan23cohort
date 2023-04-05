@@ -34,8 +34,8 @@ public class StickerServ {
 //	======
 //	UPDATE
 //	======
-	public Sticker updateOne(Sticker c) {
-		return stickerRepo.save(c);
+	public Sticker updateOne(Sticker editSticker) {
+		return stickerRepo.save(editSticker);
 	}
 	
 //	======

@@ -46,6 +46,9 @@ body main table {
   align-items: center;
   background-color: bisque;
 }
+body main table td img {
+  max-width: 250px;
+}
 body main table,
 body main tr,
 body main th,

@@ -9,7 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.crudappsession.models.Category;
 import com.example.crudappsession.models.Sticker;
@@ -32,6 +35,7 @@ public class HomeController {
 	@GetMapping("/")
 	public String index(HttpSession session, @ModelAttribute("sticker") Sticker sticker, Model model) {
 		model.addAttribute("allStickers", stickerServ.getAll());
+		model.addAttribute("allCats", catServ.getAll());
 		return "index.jsp";
 	}
 	@GetMapping("/dashboard")
@@ -41,6 +45,14 @@ public class HomeController {
 		}
 		model.addAttribute("aCat", catServ.getOne((Long)session.getAttribute("cat")));
 		return "dashboard.jsp";
+	}
+	
+	@PostMapping("/chooseCat")
+	public String chooseCat(@RequestParam("id") Long id, @ModelAttribute("sessionForm") Category cat, Model model, HttpSession session) {
+		Category oneCat = catServ.getOne(id);
+		
+		session.setAttribute("cat", oneCat.getId());
+		return "redirect:/dashboard";
 	}
 
     // ==========================
@@ -79,5 +91,32 @@ public class HomeController {
 			stickerServ.createOne(newSticker);
 			return "redirect:/dashboard";
 		}
+	}
+	
+	@GetMapping("/sticker/{id}/edit")
+	public String editSticker(@PathVariable("id") Long id, @ModelAttribute("editStickerForm") Sticker editSticker, Model model) {
+		
+		model.addAttribute("editSticker", stickerServ.getOne(id));
+		model.addAttribute("allCats", catServ.getAll());
+		return "editSticker.jsp";
+	}
+	
+	@PutMapping("/sticker/{id}/update")
+	public String updateSticker(@PathVariable("id") Long id, @Valid @ModelAttribute("editStickerForm") Sticker editSticker, BindingResult result, Model model) {
+		
+		if(result.hasErrors()) {
+			model.addAttribute("editSticker", stickerServ.getOne(id));
+			model.addAttribute("allCats", catServ.getAll());
+			return "editSticker.jsp";
+		} else {
+			stickerServ.updateOne(editSticker);
+			return "redirect:/";
+		}
+	}
+	
+	@GetMapping("/sticker/{id}/delete")
+	public String deleteSticker(@PathVariable("id") Long id) {
+		stickerServ.deleteOne(id);
+		return "redirect:/";
 	}
 }

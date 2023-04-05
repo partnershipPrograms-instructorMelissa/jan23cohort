@@ -20,42 +20,38 @@
 </head>
 <body>
 	<header>
-		<h1>Our Stickers and Categories</h1>
+		<h1>Update ${ editSticker.name }</h1>
 		<nav>
 			<a href="/">Home</a>
-			<a href="/dashboard">Dashboard</a>
 			<a href="/addCategory">Add Category</a>
 			<a href="/addSticker">Add Sticker</a>
-			<form:form action="/chooseCat" method="post" modelAttribute="sessionForm">
-				<section>
-					<label for="cat">Choose Category</label>
-					<select name="cat" id="">
-						<c:forEach var="c" items="${ allCats }">
-							<option value="${ c.id }">${ c.name }</option>
-						</c:forEach>
-					</select>
-				</section>
-				<button>Choose Category</button>
-			</form:form>
+			<a href="/chooseCat">Choose Category</a>
 		</nav>
 	</header>
 	<main>
-		<table>
-			<tr>
-				<th>Sticker Id</th>
-				<th>Sticker Category</th>
-				<th>Sticker Image</th>
-				<th>Actions</th>
-			</tr>
-			<c:forEach items="${ allStickers }" var="s">
-				<tr>
-					<td>${ s.id }</td>
-					<td>${ s.cat.name }</td>
-					<td><img src="${ s.url }" alt="${ s.name }" /></td>
-					<td><a href="/sticker/${ s.id }/view">View</a> | <a href="/sticker/${ s.id }/edit">Edit</a> | <a href="/sticker/${ s.id }/delete">Delete</a></td>
-				</tr>
-			</c:forEach>
-		</table>
+		<form:form action="/sticker/${ editSticker.id }/update" method="post" modelAttribute="editStickerForm">
+ 			<input type="hidden" name="_method" value="put">
+ 			<section>
+				<label for="name">Sticker Name</label>
+				<input type="text" name="name" value="${ editSticker.name }" />
+				<form:errors path="name" class="text-warning"/>
+			</section>
+			<section>
+				<label for="url">Image URL</label>
+				<input type="text" name="url" value="${ editSticker.url }" />
+				<form:errors path="url" class="text-warning"/>
+			</section>
+			<section>
+				<label for="cat">Choose Category</label>
+				<span>Current Value = ${ editSticker.cat.name }</span>
+				<select name="cat" id="">
+					<c:forEach var="c" items="${ allCats }">
+						<option value="${ c.id }">${ c.name }</option>
+					</c:forEach>
+				</select>
+			</section>
+			<button>Update Sticker</button>
+		</form:form>
 	</main>
 	<footer>
 		<h3>Stickers and Categories</h3>
