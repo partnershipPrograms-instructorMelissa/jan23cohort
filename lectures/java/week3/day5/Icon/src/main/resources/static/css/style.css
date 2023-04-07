@@ -39,36 +39,45 @@ body main {
   margin: 1em;
   padding: 1em;
 }
-body main .box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body main .box .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-body main .box .row .column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body main .box .row .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 body main .row {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+body main .row .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  border: 1px blue solid;
+}
+body main .row .box hr {
+  border: 2px solid black;
+  width: 100%;
+  height: 5px;
+}
+body main .row .box .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body main .row .box .row .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+body main .row .box .row .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 body main .row .column {
   display: flex;

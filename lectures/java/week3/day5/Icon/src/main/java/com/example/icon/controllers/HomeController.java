@@ -93,6 +93,7 @@ public class HomeController {
 		} else {
 		model.addAttribute("theUser", userServ.getUser((Long)session.getAttribute("user_id")));
 		model.addAttribute("allIcons", iconServ.getAll());
+		model.addAttribute("allCats", catServ.getAll());
 		return "dashboard.jsp";
 		}
 	}
@@ -208,7 +209,9 @@ public class HomeController {
 		return "redirect:/dash";
 	}
 	
-	
+	// ==========================
+    //      Category FUNCTIONS
+    // ==========================
 	
 	
 	
