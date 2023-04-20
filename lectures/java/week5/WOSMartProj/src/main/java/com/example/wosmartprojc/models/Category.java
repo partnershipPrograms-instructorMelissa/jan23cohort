@@ -1,5 +1,23 @@
 package com.example.wosmartprojc.models;
 
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="categorys")
 public class Category {
@@ -26,6 +44,21 @@ public class Category {
     //        RELATIONSHIPS
     // ==========================
 
+	@OneToMany(mappedBy="noteCat", fetch = FetchType.LAZY)
+	private List<Category> catNote;
+	
+	@OneToMany(mappedBy="footCat", fetch = FetchType.LAZY)
+	private List<Category> catFood;
+	
+	@OneToMany(mappedBy="pupCat", fetch = FetchType.LAZY)
+	private List<Category> catPup;
+	
+	@OneToMany(mappedBy="squishCat", fetch = FetchType.LAZY)
+	private List<Category> catSquish;
+	
+	@OneToMany(mappedBy="stickCat", fetch = FetchType.LAZY)
+	private List<Category> catStick;
+	
     // ==========================
     //        CONSTRUCTOR
     // ==========================
@@ -43,4 +76,78 @@ public class Category {
     protected void onUpdate() {
         this.updatedAt = new Date();
     }
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public List<Category> getCatNote() {
+		return catNote;
+	}
+
+	public void setCatNote(List<Category> catNote) {
+		this.catNote = catNote;
+	}
+
+	public List<Category> getCatFood() {
+		return catFood;
+	}
+
+	public void setCatFood(List<Category> catFood) {
+		this.catFood = catFood;
+	}
+
+	public List<Category> getCatPup() {
+		return catPup;
+	}
+
+	public void setCatPup(List<Category> catPup) {
+		this.catPup = catPup;
+	}
+
+	public List<Category> getCatSquish() {
+		return catSquish;
+	}
+
+	public void setCatSquish(List<Category> catSquish) {
+		this.catSquish = catSquish;
+	}
+
+	public List<Category> getCatStick() {
+		return catStick;
+	}
+
+	public void setCatStick(List<Category> catStick) {
+		this.catStick = catStick;
+	}
+    
+    
 }

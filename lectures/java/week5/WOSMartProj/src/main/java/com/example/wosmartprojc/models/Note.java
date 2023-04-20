@@ -19,44 +19,45 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="puppys")
-public class Puppy {
-
+@Table(name="notes")
+public class Note {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotBlank(message="Name is required!")
-    @Size(min=3, max=30, message="Name must be between 2 and 30 characters")
-	private String name;
-	
-	@NotBlank(message="Breed is required!")
-    @Size(min=3, max=30, message="Breed must be between 3 and 30 characters")
-	private String breed;
-	
-	@Column(updatable=false)
+
+    @NotBlank(message="Title is required!")
+    @Size(min=3, max=30, message="Title must be between 2 and 30 characters")
+	private String title;
+
+    @NotBlank(message="Content is required!")
+    @Size(min=3, max=255, message="Content must be between 2 and 30 characters")
+	private String content;
+
+
+    @Column(updatable=false)
 	@DateTimeFormat(pattern = "yyy-MM-DD HH:mm:ss")
 	private Date createdAt;
 	
 	@DateTimeFormat(pattern = "yyy-MM-DD HH:mm:ss")
 	private Date updatedAt;
 
+
     // ==========================
     //        RELATIONSHIPS
     // ==========================
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="user_id")
-	private User pupOwner;
+	private User noteOwner;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="category_id")
-	private User pupCat;
-
+	private Category noteCat;
+	
     // ==========================
     //        CONSTRUCTOR
     // ==========================
-    public Puppy() {}
+    public Note() {}
 
 	// ==========================
     //     GETTERS / SETTERS
@@ -78,20 +79,20 @@ public class Puppy {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getBreed() {
-		return breed;
+	public String getContent() {
+		return content;
 	}
 
-	public void setBreed(String breed) {
-		this.breed = breed;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public Date getCreatedAt() {
@@ -110,20 +111,21 @@ public class Puppy {
 		this.updatedAt = updatedAt;
 	}
 
-	public User getPupOwner() {
-		return pupOwner;
+	public User getNoteOwner() {
+		return noteOwner;
 	}
 
-	public void setPupOwner(User pupOwner) {
-		this.pupOwner = pupOwner;
+	public void setNoteOwner(User noteOwner) {
+		this.noteOwner = noteOwner;
 	}
 
-	public User getPupCat() {
-		return pupCat;
+	public Category getNoteCat() {
+		return noteCat;
 	}
 
-	public void setPupCat(User pupCat) {
-		this.pupCat = pupCat;
+	public void setNoteCat(Category noteCat) {
+		this.noteCat = noteCat;
 	}
+    
     
 }

@@ -1,5 +1,13 @@
 package com.example.wosmartprojc.repositories;
 
-public interface PupRepo {
+import java.util.List;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.wosmartprojc.models.Puppy;
+
+@Repository
+public interface PupRepo extends CrudRepository<Puppy, Long>{
+	List<Puppy> findAll();
 }
