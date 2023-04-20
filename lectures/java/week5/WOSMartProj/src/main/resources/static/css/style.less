@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@gray: #a9a9a9;
+@pink: #ffc0cb;
+
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    .flexcolumn();
+    background-color: @gray;
+    color: @pink;
+    width: 95%;
+
+    header {
+        .flexrow();
+        width: 85%;
+    }
+    main {
+        .flexcolumn();
+        width: 85%;
+    }
+    footer {
+        .flexcolumn();
+        width: 85%;
+    }
+}
