@@ -10,4 +10,9 @@ public class MainController {
 	public String index() {
 		return "index.jsp";
 	}
+	
+	@GetMapping("/logReg")
+	public String logRed() {
+		return "logReg.jsp";
+	}
 }

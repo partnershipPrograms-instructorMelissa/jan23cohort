@@ -45,19 +45,19 @@ public class Category {
     // ==========================
 
 	@OneToMany(mappedBy="noteCat", fetch = FetchType.LAZY)
-	private List<Category> catNote;
+	private List<Note> catNote;
 	
-	@OneToMany(mappedBy="footCat", fetch = FetchType.LAZY)
-	private List<Category> catFood;
+	@OneToMany(mappedBy="foodCat", fetch = FetchType.LAZY)
+	private List<Food> catFood;
 	
 	@OneToMany(mappedBy="pupCat", fetch = FetchType.LAZY)
-	private List<Category> catPup;
+	private List<Puppy> catPup;
 	
 	@OneToMany(mappedBy="squishCat", fetch = FetchType.LAZY)
-	private List<Category> catSquish;
+	private List<Squish> catSquish;
 	
 	@OneToMany(mappedBy="stickCat", fetch = FetchType.LAZY)
-	private List<Category> catStick;
+	private List<Stick> catStick;
 	
     // ==========================
     //        CONSTRUCTOR
@@ -109,45 +109,47 @@ public class Category {
 		this.updatedAt = updatedAt;
 	}
 
-	public List<Category> getCatNote() {
+	public List<Note> getCatNote() {
 		return catNote;
 	}
 
-	public void setCatNote(List<Category> catNote) {
+	public void setCatNote(List<Note> catNote) {
 		this.catNote = catNote;
 	}
 
-	public List<Category> getCatFood() {
+	public List<Food> getCatFood() {
 		return catFood;
 	}
 
-	public void setCatFood(List<Category> catFood) {
+	public void setCatFood(List<Food> catFood) {
 		this.catFood = catFood;
 	}
 
-	public List<Category> getCatPup() {
+	public List<Puppy> getCatPup() {
 		return catPup;
 	}
 
-	public void setCatPup(List<Category> catPup) {
+	public void setCatPup(List<Puppy> catPup) {
 		this.catPup = catPup;
 	}
 
-	public List<Category> getCatSquish() {
+	public List<Squish> getCatSquish() {
 		return catSquish;
 	}
 
-	public void setCatSquish(List<Category> catSquish) {
+	public void setCatSquish(List<Squish> catSquish) {
 		this.catSquish = catSquish;
 	}
 
-	public List<Category> getCatStick() {
+	public List<Stick> getCatStick() {
 		return catStick;
 	}
 
-	public void setCatStick(List<Category> catStick) {
+	public void setCatStick(List<Stick> catStick) {
 		this.catStick = catStick;
 	}
+
+	
     
     
 }

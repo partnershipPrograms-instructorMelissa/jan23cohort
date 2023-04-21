@@ -9,5 +9,5 @@ import com.example.wosmartprojc.models.Food;
 
 @Repository
 public interface FoodRepo extends CrudRepository<Food, Long> {
- List<Food> findAll();    
+	List<Food> findAll();    
 }

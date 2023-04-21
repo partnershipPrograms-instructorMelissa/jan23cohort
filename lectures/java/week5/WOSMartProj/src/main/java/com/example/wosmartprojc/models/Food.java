@@ -55,7 +55,7 @@ public class Food {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="category_id")
-	private User foodCat;
+	private Category foodCat;
 	
     // ==========================
     //        CONSTRUCTOR
@@ -138,13 +138,13 @@ public class Food {
 		this.foodOwner = foodOwner;
 	}
 
-	public User getFoodCat() {
+	public Category getFoodCat() {
 		return foodCat;
 	}
 
-	public void setFoodCat(User foodCat) {
+	public void setFoodCat(Category foodCat) {
 		this.foodCat = foodCat;
 	}
-    
+
     
 }

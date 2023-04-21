@@ -17,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #a9a9a9;
-  color: #ffc0cb;
+  color: #942e3f;
   width: 95%;
 }
 body header {
@@ -40,4 +40,7 @@ body footer {
   justify-content: center;
   align-items: center;
   width: 85%;
+}
+body footer img {
+  width: 15vw;
 }
