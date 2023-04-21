@@ -15,15 +15,21 @@
   border: 2px groove #eb44a5;
   box-shadow: 0.1em 0.25em 0.75em #eb44a5;
 }
+.altbox {
+  border: 2px groove #44e0eb;
+  box-shadow: 0.1em 0.25em 0.75em #44e0eb;
+}
+.boxalt {
+  border: 2px groove #F4CE00;
+  box-shadow: 0.1em 0.25em 0.75em #F4CE00;
+}
 table,
 tr,
 th,
 td {
   border: 3px double #44e0eb;
   text-align: center;
-  background-color: #8a005e;
   color: #fff;
-  background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
   padding: 1em;
   margin: 1em;
 }
@@ -42,6 +48,8 @@ body {
   background-color: #000000;
   color: #eb44a5;
   width: 95%;
+  background-image: url("https://images.craftsnherbs.com/backgrounds/hex3.png");
+  background-blend-mode: lighten;
 }
 body header {
   display: flex;
@@ -52,7 +60,12 @@ body header {
   justify-content: space-between;
   border: 2px groove #eb44a5;
   box-shadow: 0.1em 0.25em 0.75em #eb44a5;
+  background-color: #000000b0;
   margin: 0.1em 0.5em 1em;
+  padding: 0.2em 1em;
+}
+body header pre {
+  background-color: #000000b0;
 }
 body header nav {
   display: flex;
@@ -61,6 +74,8 @@ body header nav {
   align-items: center;
   padding: 0.5em;
   margin: 0.5em;
+  width: 50%;
+  justify-content: space-evenly;
 }
 body main {
   display: flex;
@@ -68,6 +83,9 @@ body main {
   justify-content: center;
   align-items: center;
   width: 85%;
+  background-color: #000000b0;
+  margin: 0.1em 0.5em 1em;
+  padding: 0.2em 1em;
 }
 body main .lg {
   border: 2px groove #eb44a5;
@@ -85,6 +103,30 @@ body main .row {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+}
+body main .row form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  padding: 1em;
+  width: 30vw;
+}
+body main .row form section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 0.5em;
+  width: 25vw;
+  justify-content: space-between;
+}
+body main .row form button {
+  border: 2px groove #44e0eb;
+  box-shadow: 0.1em 0.25em 0.75em #44e0eb;
+  font-size: 1.5em;
 }
 body main .row .column {
   display: flex;
@@ -104,6 +146,9 @@ body footer {
   justify-content: center;
   align-items: center;
   width: 85%;
+  background-color: #000000b0;
+  margin: 0.1em 0.5em 1em;
+  padding: 0.2em 1em;
 }
 body footer img {
   width: 15vw;

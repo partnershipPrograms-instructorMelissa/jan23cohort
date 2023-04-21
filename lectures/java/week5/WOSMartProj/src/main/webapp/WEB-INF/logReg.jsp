@@ -10,7 +10,7 @@
 <html>
 <head>
 <!-- for Bootstrap CSS -->
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<!-- <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" /> -->
 <!-- YOUR own local CSS -->
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <!-- For any Bootstrap that uses JS -->
@@ -24,10 +24,22 @@
 		<pre>
             <c:import url="/resources/ascii.txt" />
         </pre>
-		<nav-component></nav-component>
+		<nav>
+			<c:if test="${ user_id != null }">
+				<a href="/dashboard">Dashboard</a>
+				<a href="/store">Store</a>
+				<a href="/logout">Logout</a>
+			</c:if>
+			<c:if test="${ user_id == null }">
+                <a href="/">Home</a>
+                <a href="/store">Store</a>
+				<a href="/logReg">Login</a>
+			</c:if>
+        </nav>
 	</header>
     <main>
-    	<form:form action="/register" method="POST" modelAttribute="newUser">
+		<div class="row">
+			<form:form action="/register" method="POST" modelAttribute="newUser">
 				<section>
 					<form:label path="firstName">First Name</form:label>
 					<form:input type="text" class="input" path="firstName" />
@@ -58,10 +70,9 @@
 					<form:input type="password" class="input" path="confirmPassword" />
 					<form:errors path="confirmPassword" class="text-danger" />
 				</section>
-				<button class="btn btn-primary">Register and Login</button>
+				<button>Register and Login</button>
 			</form:form>
-			
-			
+
 			<form:form action="/login" method="POST" modelAttribute="newLogin">
 				<section>
 					<form:label path="username">Username</form:label>
@@ -73,8 +84,9 @@
 					<form:input type="password" class="input" path="password" />
 					<form:errors path="password" class="text-danger" />
 				</section>
-				<button class="btn btn-primary">Login</button>
+				<button>Login</button>
 			</form:form>
+		</div>
     </main>
     <footer>
     

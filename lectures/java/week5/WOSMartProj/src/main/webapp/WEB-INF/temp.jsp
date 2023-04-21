@@ -14,7 +14,6 @@
 <!-- YOUR own local CSS -->
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <!-- For any Bootstrap that uses JS -->
-<script src="/js/components/nav.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>WOS Mart</title>
@@ -24,7 +23,18 @@
         <pre>
             <c:import url="/resources/ascii.txt" />
         </pre>
-        <nav-component></nav-component>
+        <nav>
+			<c:if test="${ user_id != null }">
+				<a href="/dashboard">Dashboard</a>
+				<a href="/store">Store</a>
+				<a href="/logout">Logout</a>
+			</c:if>
+			<c:if test="${ user_id == null }">
+                <a href="/">Home</a>
+                <a href="/store">Store</a>
+				<a href="/logReg">Login</a>
+			</c:if>
+        </nav>
 	</header>
     <main>
         
