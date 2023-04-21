@@ -14,13 +14,16 @@
 <!-- YOUR own local CSS -->
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <!-- For any Bootstrap that uses JS -->
+<script src="/js/components/nav.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
-<title>Full Stack Lecture</title>
+<title>WOS Mart</title>
 </head>
 <body>
 	<header>
-		<img src="/images/logo.png" alt="">
+		<pre>
+            <c:import url="/resources/ascii.txt" />
+        </pre>
 		<nav-component></nav-component>
 	</header>
     <main>
@@ -41,6 +44,11 @@
 					<form:errors path="email" class="text-danger" />
 				</section>
 				<section>
+					<form:label path="username">Username</form:label>
+					<form:input type="text" class="input" path="username" />
+					<form:errors path="username" class="text-danger" />
+				</section>
+				<section>
 					<form:label path="password">Password</form:label>
 					<form:input type="password" class="input" path="password" />
 					<form:errors path="password" class="text-danger" />
@@ -56,9 +64,9 @@
 			
 			<form:form action="/login" method="POST" modelAttribute="newLogin">
 				<section>
-					<form:label path="email">Email</form:label>
-					<form:input type="email" class="input" path="email" />
-					<form:errors path="email" class="text-danger" />
+					<form:label path="username">Username</form:label>
+					<form:input type="text" class="input" path="username" />
+					<form:errors path="username" class="text-danger" />
 				</section>
 				<section>
 					<form:label path="password">Password</form:label>

@@ -19,14 +19,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style="background-color: darkgray;">
+<body>
 	<header>
+        <pre>
+            <c:import url="/resources/ascii.txt" />
+        </pre>
         <nav-component></nav-component>
 	</header>
     <main>
-    	<pre>
-            <c:import url="/resources/ascii.txt" />
-        </pre>
+        <button class="lg"><a href="/logReg">Join us / Log in</a></button>
     </main>
     <footer>
         <img src="/images/bee.png" alt="">

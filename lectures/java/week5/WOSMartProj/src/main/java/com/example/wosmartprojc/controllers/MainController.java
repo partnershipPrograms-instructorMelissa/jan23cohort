@@ -1,7 +1,13 @@
 package com.example.wosmartprojc.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.wosmartprojc.models.LoginUser;
+import com.example.wosmartprojc.models.User;
 
 @Controller
 public class MainController {
@@ -12,7 +18,14 @@ public class MainController {
 	}
 	
 	@GetMapping("/logReg")
-	public String logRed() {
-		return "logReg.jsp";
+	public String logRed(HttpSession session, Model model) {
+		if(session.getAttribute("user_id") != null) {
+			return "redirect:/dashboard";
+		} else {
+			model.addAttribute("newUser", new User());
+			model.addAttribute("newLogin", new LoginUser());
+			return "logReg.jsp";
+		}
+		
 	}
 }
